@@ -2,8 +2,6 @@
 
 ---
 
-[![linecorp-repo - 0.1.38](https://npm.linecorp.com/-/badge/@linecorp/linengine-jsflagr.svg)](https://npm.linecorp.com/-/package/@linecorp/linengine-jsflagr)
-
 The LINE Open-Feature x Openflagr API SDK for JavaScript is a JavaScript library that provides an API client SDK to integrate a toggle system, named [Openflagr](https://github.com/openflagr/flagr) and follows the [Open-Feature](https://openfeature.dev/) specification.
 
 ## Getting started
