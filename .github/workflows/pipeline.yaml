@@ -1,0 +1,48 @@
+name: pipeline
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - release-*
+  pull_request:
+
+concurrency:
+  group: pipeline-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  node_version: 18.12.1
+
+jobs:
+  pipeline:
+    runs-on: [self-hosted, Linux, X64, devops-tw-runners]
+
+    steps:
+      - name: Checkout repository
+        uses: actions-mirror/actions-checkout@v3
+
+      - name: Set up Node.js
+        uses: actions-mirror/actions-setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+
+      - name: Run install
+        uses: actions-mirror/actions-yarn@v4
+        with:
+          cmd: install
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test
+
+      - name: Build project
+        run: yarn build
+
+      - name: Publish
+        if: ${{ github.event_name != 'pull_request' && startsWith(github.ref_name, 'release-') }}
+        run: PRIVATE_NPM_TOKEN=${{ secrets.NPM_CI_TOKEN }} ./script/publish.sh
+        shell: bash
