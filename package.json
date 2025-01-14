@@ -7,9 +7,6 @@
   "files": [
     "dist/*"
   ],
-  "publishConfig": {
-    "registry": "https://npm.linecorp.com"
-  },
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist/",
