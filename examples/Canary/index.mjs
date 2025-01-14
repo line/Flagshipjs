@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 LY Corporation. All rights reserved.
+ * Copyright (c) 2024-2025 LY Corporation. All rights reserved.
  * LY Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 import readline from 'readline';
@@ -54,7 +54,7 @@ async function checkCanary() {
   console.log(`===== This Iteration (total count = ${totalCount}) =====`);
   console.log(`|            ${api1Result}                |`);
   console.log(`|            ${api2Result}              |`);
-  console.log(`=====      End Of This Iteration         =====`);
+  console.log('=====      End Of This Iteration         =====');
 }
 
 async function start() {

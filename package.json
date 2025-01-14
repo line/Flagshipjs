@@ -14,7 +14,7 @@
   "scripts": {
     "clean": "rm -rf dist/",
     "build": "yarn clean && tsc",
-    "lint": "eslint --ext .ts src test",
+    "lint": "eslint",
     "release": "node ./script/release.js",
     "dev:svr": "docker-compose up; docker-compose down",
     "test": "npx jest",

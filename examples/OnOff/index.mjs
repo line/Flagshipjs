@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023-2024 LY Corporation. All rights reserved.
+ * Copyright (c) 2023-2025 LY Corporation. All rights reserved.
  * LY Corporation PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 import { FlagrClient, OpenFlagrProvider, OpenFeature } from '../../dist/index.js';
